@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Declassified: The Genius Switch</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    color: #fff;
+  }
+
+  .headline {
+    text-align: center;
+    max-width: 900px;
+    margin-bottom: 40px;
+  }
+
+  .headline h1 {
+    font-size: clamp(1.6rem, 4.5vw, 3rem);
+    line-height: 1.25;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+
+  .headline h1 .highlight {
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  }
+
+  .headline .sub {
+    margin-top: 18px;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: #b8c1d9;
+    line-height: 1.6;
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 780px;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .video-wrapper:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 70px rgba(255, 215, 0, 0.25);
+  }
+
+  .video-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(6px) brightness(0.65);
+    transition: filter 0.4s ease;
+  }
+
+  .video-wrapper:hover img {
+    filter: blur(3px) brightness(0.75);
+  }
+
+  /* Dark overlay */
+  .video-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  /* Play button */
+  .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    animation: blink 1.2s ease-in-out infinite;
+    box-shadow: 0 0 0 rgba(255, 215, 0, 0.7);
+  }
+
+  .play-btn::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: 6px;
+    border-left: 26px solid #0a0e27;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+  }
+
+  /* Blink + pulse animation */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      opacity: 0.75;
+      box-shadow: 0 0 0 22px rgba(255, 215, 0, 0);
+      transform: translate(-50%, -50%) scale(1.06);
+    }
+  }
+
+  /* Top secret ribbon */
+  .ribbon {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: #e63946;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    z-index: 6;
+    text-transform: uppercase;
+  }
+
+  .cta-text {
+    margin-top: 32px;
+    text-align: center;
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    color: #ffd700;
+    font-weight: 600;
+    animation: blinkText 1.5s ease-in-out infinite;
+  }
+
+  @keyframes blinkText {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+
+  .note {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: #7a8499;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    .play-btn {
+      width: 68px;
+      height: 68px;
+    }
+    .play-btn::before {
+      border-left-width: 20px;
+      border-top-width: 12px;
+      border-bottom-width: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="headline">
+    <h1>
+      NASA &amp; CIA Scientists Just <span class="highlight">Declassified</span><br>
+      The Hidden "Genius Switch" Inside Your Brain...
+    </h1>
+    <p class="sub">
+      What they discovered was never meant to reach the public. Watch the short video below before it gets taken down.
+    </p>
+  </div>
+
+  <!-- Clickable video area -->
+  <a href="https://2b36d9qclh0z82bqj0v2-72n58.hop.clickbank.net" target="_blank" rel="noopener" style="text-decoration:none;">
+    <div class="video-wrapper">
+      <span class="ribbon">Top Secret</span>
+      <img
+        src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=80"
+        alt="Brain scan background">
+      <div class="play-btn"></div>
+    </div>
+  </a>
+
+  <p class="cta-text">▶ Click the Play Button to Watch the Presentation</p>
+  <p class="note">Warning: This video may be removed at any time.</p>
+
+</body>
+</html>
